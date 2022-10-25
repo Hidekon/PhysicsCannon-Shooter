@@ -38,6 +38,7 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         moveDirection = move.ReadValue<Vector2>();
+        Debug.Log(moveDirection);
         rotateDirection = rotate.ReadValue<float>();
         
     }
