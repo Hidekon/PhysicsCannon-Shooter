@@ -46,7 +46,12 @@ public class PlayerController : MonoBehaviour
     private void FixedUpdate()
     {
         rb.angularVelocity = new Vector3(0, moveDirection.x * speed, 0);
-        rb.velocity = speed * -moveDirection.y * transform.up;
+        
+        if (moveDirection.y != 0)
+        {
+            rb.drag = 5;
+            rb.velocity = speed * -moveDirection.y * transform.up;
+        }
 
         //rb.velocity = new Vector3(0, 0, moveDirection.y * speed);
 
